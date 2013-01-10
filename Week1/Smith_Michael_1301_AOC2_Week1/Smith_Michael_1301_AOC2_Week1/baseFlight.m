@@ -10,7 +10,7 @@
 
 @implementation baseFlight
 
-@synthesize planeList, pilotSkill, flightTimeMinutes;
+@synthesize planeList, pilotSkill, flightTimeMinutes, planes;
 
 //initialize the default flight, starting the instance and setting initial flight time to zero
 -(id)init

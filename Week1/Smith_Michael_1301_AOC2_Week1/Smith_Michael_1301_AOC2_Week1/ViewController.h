@@ -11,4 +11,9 @@
 
 @interface ViewController : UIViewController
 
+{
+    UILabel *firstLabel;
+    UILabel *secondLabel;
+    UILabel *thirdLabel;
+}
 @end
