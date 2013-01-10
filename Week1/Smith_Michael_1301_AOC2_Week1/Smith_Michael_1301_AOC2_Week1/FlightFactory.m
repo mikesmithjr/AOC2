@@ -10,4 +10,8 @@
 
 @implementation FlightFactory
 
++(baseFlight *)setupNewFlight: (int)flightType
+{
+    return [[jacksflight alloc] init];
+}
 @end

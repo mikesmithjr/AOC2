@@ -10,4 +10,25 @@
 
 @implementation baseFlight
 
+@synthesize planeList, pilotSkill, flightTimeMinutes;
+
+//initialize the default flight, starting the instance and setting initial flight time to zero
+-(id)init
+{
+    self = [super init];
+    if (self != nil)
+    {
+        [self setFlightTimeMinutes:0];
+        [self setPlaneList:nil];
+        [self setPilotSkill:nil];
+    }
+    return self;
+}
+
+//calculation of flight time based on pilot
+-(void)calcFlightTime
+{
+    NSLog(@"This pilot can fly for %i minutes", flightTimeMinutes);
+}
+
 @end

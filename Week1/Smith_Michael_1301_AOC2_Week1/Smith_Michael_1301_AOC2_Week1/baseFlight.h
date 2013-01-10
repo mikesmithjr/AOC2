@@ -10,4 +10,27 @@
 
 @interface baseFlight : NSObject
 
+{
+    int pilotEnum;
+}
+
+typedef enum
+{
+    JACK,
+    GARY,
+    AUSTIN
+} pilotEnum;
+
+//data for pilot's array of planes, flight time in minutes, and skill level
+
+@property NSArray *planeList;
+@property NSString *pilotSkill;
+@property int flightTimeMinutes;
+
+//Initialize
+-(id)init;
+
+//calculating flight time
+-(void)calcFlightTime;
+
 @end

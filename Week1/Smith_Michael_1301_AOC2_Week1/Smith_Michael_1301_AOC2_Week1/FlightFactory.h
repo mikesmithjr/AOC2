@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "baseFlight.h"
+#import "jacksflight.h"
+#import "garysFlight.h"
+#import "austinsFlight.h"
 
 @interface FlightFactory : NSObject
+
++(baseFlight *)setupNewFlight: (int)flightType;
 
 @end
