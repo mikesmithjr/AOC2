@@ -1,5 +1,5 @@
 //
-//  jacksflight.h
+//  firstFlight.h
 //  Smith_Michael_1301_AOC2_Week1
 //
 //  Created by Michael Smith on 1/9/13.
@@ -8,6 +8,13 @@
 
 #import "baseFlight.h"
 
-@interface jacksflight : baseFlight
+@interface firstFlight : baseFlight
+
+//data for number of flights and time per flight
+
+@property int flights;
+@property int timePerFlight;
+
+
 
 @end

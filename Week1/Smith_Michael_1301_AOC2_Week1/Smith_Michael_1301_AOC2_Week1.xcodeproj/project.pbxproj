@@ -20,9 +20,9 @@
 		9207FA3D169E6F1900B1CC17 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9207FA3B169E6F1900B1CC17 /* ViewController.xib */; };
 		9207FA45169E6F7A00B1CC17 /* FlightFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9207FA44169E6F7A00B1CC17 /* FlightFactory.m */; };
 		9207FA48169E6FDB00B1CC17 /* baseFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9207FA47169E6FDB00B1CC17 /* baseFlight.m */; };
-		9207FA4B169E6FF500B1CC17 /* jacksflight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9207FA4A169E6FF500B1CC17 /* jacksflight.m */; };
-		9207FA4E169E700C00B1CC17 /* garysFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9207FA4D169E700C00B1CC17 /* garysFlight.m */; };
-		9207FA51169E701D00B1CC17 /* austinsFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 9207FA50169E701D00B1CC17 /* austinsFlight.m */; };
+		92AEC160169E8354004425D6 /* firstFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AEC15F169E8354004425D6 /* firstFlight.m */; };
+		92AEC164169E8367004425D6 /* secondFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AEC163169E8367004425D6 /* secondFlight.m */; };
+		92AEC167169E837A004425D6 /* thirdFlight.m in Sources */ = {isa = PBXBuildFile; fileRef = 92AEC166169E837A004425D6 /* thirdFlight.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,12 +46,12 @@
 		9207FA44169E6F7A00B1CC17 /* FlightFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightFactory.m; sourceTree = "<group>"; };
 		9207FA46169E6FDB00B1CC17 /* baseFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseFlight.h; sourceTree = "<group>"; };
 		9207FA47169E6FDB00B1CC17 /* baseFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseFlight.m; sourceTree = "<group>"; };
-		9207FA49169E6FF500B1CC17 /* jacksflight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jacksflight.h; sourceTree = "<group>"; };
-		9207FA4A169E6FF500B1CC17 /* jacksflight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = jacksflight.m; sourceTree = "<group>"; };
-		9207FA4C169E700C00B1CC17 /* garysFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = garysFlight.h; sourceTree = "<group>"; };
-		9207FA4D169E700C00B1CC17 /* garysFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = garysFlight.m; sourceTree = "<group>"; };
-		9207FA4F169E701D00B1CC17 /* austinsFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = austinsFlight.h; sourceTree = "<group>"; };
-		9207FA50169E701D00B1CC17 /* austinsFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = austinsFlight.m; sourceTree = "<group>"; };
+		92AEC15E169E8354004425D6 /* firstFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = firstFlight.h; sourceTree = "<group>"; };
+		92AEC15F169E8354004425D6 /* firstFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = firstFlight.m; sourceTree = "<group>"; };
+		92AEC162169E8367004425D6 /* secondFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondFlight.h; sourceTree = "<group>"; };
+		92AEC163169E8367004425D6 /* secondFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondFlight.m; sourceTree = "<group>"; };
+		92AEC165169E837A004425D6 /* thirdFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdFlight.h; sourceTree = "<group>"; };
+		92AEC166169E837A004425D6 /* thirdFlight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thirdFlight.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +108,12 @@
 				9207FA44169E6F7A00B1CC17 /* FlightFactory.m */,
 				9207FA46169E6FDB00B1CC17 /* baseFlight.h */,
 				9207FA47169E6FDB00B1CC17 /* baseFlight.m */,
-				9207FA49169E6FF500B1CC17 /* jacksflight.h */,
-				9207FA4A169E6FF500B1CC17 /* jacksflight.m */,
-				9207FA4C169E700C00B1CC17 /* garysFlight.h */,
-				9207FA4D169E700C00B1CC17 /* garysFlight.m */,
-				9207FA4F169E701D00B1CC17 /* austinsFlight.h */,
-				9207FA50169E701D00B1CC17 /* austinsFlight.m */,
+				92AEC15E169E8354004425D6 /* firstFlight.h */,
+				92AEC15F169E8354004425D6 /* firstFlight.m */,
+				92AEC162169E8367004425D6 /* secondFlight.h */,
+				92AEC163169E8367004425D6 /* secondFlight.m */,
+				92AEC165169E837A004425D6 /* thirdFlight.h */,
+				92AEC166169E837A004425D6 /* thirdFlight.m */,
 			);
 			path = Smith_Michael_1301_AOC2_Week1;
 			sourceTree = "<group>";
@@ -203,9 +203,9 @@
 				9207FA3A169E6F1900B1CC17 /* ViewController.m in Sources */,
 				9207FA45169E6F7A00B1CC17 /* FlightFactory.m in Sources */,
 				9207FA48169E6FDB00B1CC17 /* baseFlight.m in Sources */,
-				9207FA4B169E6FF500B1CC17 /* jacksflight.m in Sources */,
-				9207FA4E169E700C00B1CC17 /* garysFlight.m in Sources */,
-				9207FA51169E701D00B1CC17 /* austinsFlight.m in Sources */,
+				92AEC160169E8354004425D6 /* firstFlight.m in Sources */,
+				92AEC164169E8367004425D6 /* secondFlight.m in Sources */,
+				92AEC167169E837A004425D6 /* thirdFlight.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +322,7 @@
 				9207FA42169E6F1900B1CC17 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
