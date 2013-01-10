@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "baseFlight.h"
-#import "jacksflight.h"
-#import "garysFlight.h"
-#import "austinsFlight.h"
+#import "firstFlight.h"
+#import "secondFlight.h"
+#import "thirdFlight.h"
 
 @interface FlightFactory : NSObject
 

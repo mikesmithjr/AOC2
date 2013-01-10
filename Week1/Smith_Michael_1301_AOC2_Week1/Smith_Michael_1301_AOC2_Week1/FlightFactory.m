@@ -12,6 +12,16 @@
 
 +(baseFlight *)setupNewFlight: (int)flightType
 {
-    return [[jacksflight alloc] init];
+    if (flightType == JACK) {
+        return [[firstFlight alloc] init];
+        
+    }else if (flightType == GARY){
+        return [[secondFlight alloc] init];
+        
+    }else if (flightType == AUSTIN){
+        return [[thirdFlight alloc] init];
+        
+    }else
+        return nil;
 }
 @end
