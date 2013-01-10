@@ -18,7 +18,7 @@
     self = [super init];
     if (self != nil)
     {
-        [self setFlightTimeMinutes:10];
+        [self setFlightTimeMinutes:0];
         [self setFlights:5];
         [self setTimePerFlight:0];
     }

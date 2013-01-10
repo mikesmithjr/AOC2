@@ -26,6 +26,7 @@ typedef enum
 @property NSArray *planeList;
 @property NSString *pilotSkill;
 @property int flightTimeMinutes;
+@property NSString *planes;
 
 //Initialize
 -(id)init;
