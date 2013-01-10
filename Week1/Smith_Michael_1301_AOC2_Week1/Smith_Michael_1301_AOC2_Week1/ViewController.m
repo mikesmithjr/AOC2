@@ -16,6 +16,17 @@
 
 - (void)viewDidLoad
 {
+    //creating first flight
+    firstFlight *jacksFlight = (firstFlight*)[FlightFactory setupNewFlight:JACK];
+    [jacksFlight setFlightTimeMinutes:20];
+    
+    //creating second flight
+    secondFlight *garysFlight = (secondFlight*)[FlightFactory setupNewFlight:GARY];
+    [garysFlight setFlightTimeMinutes:40];
+    
+    //creating third flight
+    thirdFlight *austinsFlight = (thirdFlight*)[FlightFactory setupNewFlight:AUSTIN];
+    [austinsFlight setFlightTimeMinutes:10];
     
     
     

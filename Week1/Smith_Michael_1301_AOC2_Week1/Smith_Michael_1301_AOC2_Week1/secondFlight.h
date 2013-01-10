@@ -14,7 +14,7 @@
 
 @property int flights;
 @property int timePerFlight;
-@property int flightTimeMinutes;
+//@property int flightTimeMinutes;
 
 
 
