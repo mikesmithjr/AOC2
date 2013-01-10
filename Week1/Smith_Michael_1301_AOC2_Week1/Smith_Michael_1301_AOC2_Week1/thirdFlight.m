@@ -19,8 +19,8 @@
     if (self != nil)
     {
         [self setFlightTimeMinutes:10];
-        [self setFlights:0];
-        [self setTimePerFlight:2];
+        [self setFlights:5];
+        [self setTimePerFlight:0];
     }
     return self;
 };
