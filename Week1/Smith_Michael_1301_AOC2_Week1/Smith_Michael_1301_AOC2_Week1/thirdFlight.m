@@ -19,7 +19,7 @@
     if (self != nil)
     {
         [self setFlightTimeMinutes:0];
-        [self setFlights:5];
+        [self setFlights:0];
         [self setTimePerFlight:0];
     }
     return self;
@@ -29,7 +29,7 @@
 -(void)calcFlightTime
 {
     [self setTimePerFlight:(flightTimeMinutes / flights)];
-    NSLog(@"Austin gets to fly for %i minutes per flight", self.timePerFlight);
+    //NSLog(@"Austin gets to fly for %i minutes per flight", self.timePerFlight);
 }
 
 

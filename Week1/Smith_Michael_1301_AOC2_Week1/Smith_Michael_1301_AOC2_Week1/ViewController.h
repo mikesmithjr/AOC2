@@ -15,5 +15,8 @@
     UILabel *firstLabel;
     UILabel *secondLabel;
     UILabel *thirdLabel;
+    UILabel *auxFirstLabel;
+    UILabel *auxSecondLabel;
+    UILabel *auxThirdLabel;
 }
 @end
