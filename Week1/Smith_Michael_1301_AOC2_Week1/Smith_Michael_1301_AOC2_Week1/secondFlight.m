@@ -20,7 +20,7 @@
     {
         [self setFlightTimeMinutes:0];
         [self setFlights:0];
-        [self setTimePerFlight:10];
+        [self setTimePerFlight:0];
     }
     return self;
 };
@@ -29,7 +29,7 @@
 -(void)calcFlightTime
 {
     [self setFlights:(flightTimeMinutes / timePerFlight)];
-    NSLog(@"Gary gets to fly %i times.", self.flights);
+    //NSLog(@"Gary gets to fly %i times.", self.flights);
 }
 
 
