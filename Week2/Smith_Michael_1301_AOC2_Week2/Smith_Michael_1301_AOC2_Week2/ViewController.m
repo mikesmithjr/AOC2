@@ -19,6 +19,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -33,6 +38,10 @@
     {
         if (button.tag == 0)
         {
+            //Disabling the other two class buttons
+            firstButton.enabled = false;
+            secondButton.enabled = true;
+            thirdButton.enabled = true;
             
             //creating first flight
             firstFlight *jacksFlight = (firstFlight*)[FlightFactory setupNewFlight:JACK];
@@ -57,12 +66,16 @@
                 [jacksFlight calcFlightTime];
                 
                 firstLabel.text = [NSString stringWithFormat:@"Jack is an %@ pilot and can fly one of these planes: %@.", [jacksFlight pilotSkill], (planes)];
-                auxFirstLabel.text = [NSString stringWithFormat:@"Jack can fly %i times for %i minutes each totaling %i minutes.", [jacksFlight flights], [jacksFlight timePerFlight], [jacksFlight flightTimeMinutes]];
+                textBox.text = [NSString stringWithFormat:@"Jack can fly %i times for %i minutes each totaling %i minutes.", [jacksFlight flights], [jacksFlight timePerFlight], [jacksFlight flightTimeMinutes]];
             }
             
         }
         else if (button.tag == 1)
         {
+            //Disabling the other two class buttons
+            firstButton.enabled = true;
+            secondButton.enabled = false;
+            thirdButton.enabled = true;
             
             //creating second flight
             secondFlight *garysFlight = (secondFlight*)[FlightFactory setupNewFlight:GARY];
@@ -86,12 +99,16 @@
                 
                 [garysFlight calcFlightTime];
                 
-                secondLabel.text = [NSString stringWithFormat:@"Gary is an %@ pilot and can fly one of these planes: %@.", [garysFlight pilotSkill], (planes)];
-                auxSecondLabel.text = [NSString stringWithFormat:@"Gary can fly %i times for %i minutes each totaling %i minutes.", [garysFlight flights], [garysFlight timePerFlight], [garysFlight flightTimeMinutes]];
+                firstLabel.text = [NSString stringWithFormat:@"Gary is an %@ pilot and can fly one of these planes: %@.", [garysFlight pilotSkill], (planes)];
+                textBox.text = [NSString stringWithFormat:@"Gary can fly %i times for %i minutes each totaling %i minutes.", [garysFlight flights], [garysFlight timePerFlight], [garysFlight flightTimeMinutes]];
             }
         }
         else if (button.tag == 2)
         {
+            //Disabling the other two class buttons
+            firstButton.enabled = true;
+            secondButton.enabled = true;
+            thirdButton.enabled = false;
             
             //creating third flight
             thirdFlight *austinsFlight = (thirdFlight*)[FlightFactory setupNewFlight:AUSTIN];
@@ -115,8 +132,8 @@
                 
                 [austinsFlight calcFlightTime];
                 
-                thirdLabel.text = [NSString stringWithFormat:@"Austin is an %@ pilot and can fly one of these planes: %@.", [austinsFlight pilotSkill], (planes)];
-                auxThirdLabel.text = [NSString stringWithFormat:@"Austin can fly %i times for %i minutes each totaling %i minutes.", [austinsFlight flights], [austinsFlight timePerFlight], [austinsFlight flightTimeMinutes]];
+                firstLabel.text = [NSString stringWithFormat:@"Austin is an %@ pilot and can fly one of these planes: %@.", [austinsFlight pilotSkill], (planes)];
+                textBox.text = [NSString stringWithFormat:@"Austin can fly %i times for %i minutes each totaling %i minutes.", [austinsFlight flights], [austinsFlight timePerFlight], [austinsFlight flightTimeMinutes]];
             }
         }
         else if (button.tag == 3)
@@ -127,7 +144,31 @@
                 [self presentViewController:infoView animated:TRUE completion:nil];
             }
         }
+        else if (button.tag == 4)
+        {
+            
+        }
     }
 }
 
+-(IBAction)colorSelect:(id)sender
+{
+    UISegmentedControl *colorChanger = (UISegmentedControl*)sender;
+    if (colorChanger != nil)
+    {
+        int selectedColor = colorChanger.selectedSegmentIndex;
+        if (selectedColor == 0)
+        {
+            self.view.backgroundColor = [UIColor whiteColor];
+        }
+        else if (selectedColor == 1)
+        {
+            self.view.backgroundColor = [UIColor grayColor];
+        }
+        else if (selectedColor == 2)
+        {
+            self.view.backgroundColor = [UIColor blueColor];
+        }
+    }
+}
 @end

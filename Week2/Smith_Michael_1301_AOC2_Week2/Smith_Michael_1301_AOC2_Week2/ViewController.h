@@ -12,19 +12,22 @@
 @interface ViewController : UIViewController
 
 {
-    UILabel *firstLabel;
-    UILabel *secondLabel;
-    UILabel *thirdLabel;
-    UILabel *auxFirstLabel;
-    UILabel *auxSecondLabel;
-    UILabel *auxThirdLabel;
-    
+    //setting up buttons
     IBOutlet UIButton *firstButton;
     IBOutlet UIButton *secondButton;
     IBOutlet UIButton *thirdButton;
     IBOutlet UIButton *secViewButton;
+    
+    
+    //setting up labels
+    IBOutlet UILabel *firstLabel;
+    
+    
+    //setting up text box
+    IBOutlet UITextField *textBox;
 }
 
 -(IBAction)onClick:(id)sender;
+-(IBAction)colorSelect:(id)sender;
 
 @end

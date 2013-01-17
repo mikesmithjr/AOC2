@@ -19,8 +19,8 @@
     self = [super init];
     if (self != nil)
     {
-        [self setFlights:5];
-        [self setTimePerFlight:0];
+        [self setFlights:0];
+        [self setTimePerFlight:5];
     }
     return self;
 };
@@ -28,7 +28,7 @@
 //overriding the base flight to refactor for individual flight data
 -(void)calcFlightTime
 {
-    [self setTimePerFlight:(flightTimeMinutes / flights)];
+    [self setFlightTimeMinutes:(flights * timePerFlight)];
     //NSLog(@"Austin gets to fly for %i minutes per flight", self.timePerFlight);
 }
 
