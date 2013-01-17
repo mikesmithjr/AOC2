@@ -66,9 +66,8 @@
                 [jacksFlight calcFlightTime];
                 
                 firstLabel.text = [NSString stringWithFormat:@"Jack is an %@ pilot and can fly one of these planes: %@.", [jacksFlight pilotSkill], (planes)];
-                textBox.text = [NSString stringWithFormat:@"Jack can fly %i times for %i minutes each totaling %i minutes.", [jacksFlight flights], [jacksFlight timePerFlight], [jacksFlight flightTimeMinutes]];
+                
             }
-            
         }
         else if (button.tag == 1)
         {
@@ -100,7 +99,7 @@
                 [garysFlight calcFlightTime];
                 
                 firstLabel.text = [NSString stringWithFormat:@"Gary is an %@ pilot and can fly one of these planes: %@.", [garysFlight pilotSkill], (planes)];
-                textBox.text = [NSString stringWithFormat:@"Gary can fly %i times for %i minutes each totaling %i minutes.", [garysFlight flights], [garysFlight timePerFlight], [garysFlight flightTimeMinutes]];
+                
             }
         }
         else if (button.tag == 2)
@@ -133,7 +132,7 @@
                 [austinsFlight calcFlightTime];
                 
                 firstLabel.text = [NSString stringWithFormat:@"Austin is an %@ pilot and can fly one of these planes: %@.", [austinsFlight pilotSkill], (planes)];
-                textBox.text = [NSString stringWithFormat:@"Austin can fly %i times for %i minutes each totaling %i minutes.", [austinsFlight flights], [austinsFlight timePerFlight], [austinsFlight flightTimeMinutes]];
+                
             }
         }
         else if (button.tag == 3)
@@ -146,7 +145,22 @@
         }
         else if (button.tag == 4)
         {
+            if (button.tag == 0)
+            {
+                textBox.text =[NSString stringWithFormat:@"Jack"];
+                //textBox.text = [NSString stringWithFormat:@"Jack can fly %i times for %i minutes each totaling %i minutes.", [jacksFlight flights], [jacksFlight timePerFlight], [jacksFlight flightTimeMinutes]];
             
+            }
+            else if (button.tag == 1)
+            {
+                textBox.text =[NSString stringWithFormat:@"Gary"];
+                //textBox.text = [NSString stringWithFormat:@"Gary can fly %i times for %i minutes each totaling %i minutes.", [garysFlight flights], [garysFlight timePerFlight], [garysFlight flightTimeMinutes]];
+            }
+            else if (button.tag == 2)
+            {
+                textBox.text =[NSString stringWithFormat:@"Austin"];
+                //textBox.text = [NSString stringWithFormat:@"Austin can fly %i times for %i minutes each totaling %i minutes.", [austinsFlight flights], [austinsFlight timePerFlight], [austinsFlight flightTimeMinutes]];
+            }
         }
     }
 }
@@ -169,6 +183,16 @@
         {
             self.view.backgroundColor = [UIColor blueColor];
         }
+    }
+}
+
+-(IBAction)stepper:(id)sender
+{
+    UIStepper *stepperControl = (UIStepper*)sender;
+    if (stepperControl != nil)
+    {
+        int stepValue = stepperControl.value;
+        textBox.text = [NSString stringWithFormat:@"value is %d", stepValue];
     }
 }
 @end

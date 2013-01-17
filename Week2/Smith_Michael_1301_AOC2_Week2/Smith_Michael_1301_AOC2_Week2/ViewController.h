@@ -17,7 +17,8 @@
     IBOutlet UIButton *secondButton;
     IBOutlet UIButton *thirdButton;
     IBOutlet UIButton *secViewButton;
-    
+    IBOutlet UIButton *calcButton;
+    IBOutlet UIStepper *stepper;
     
     //setting up labels
     IBOutlet UILabel *firstLabel;
@@ -29,5 +30,5 @@
 
 -(IBAction)onClick:(id)sender;
 -(IBAction)colorSelect:(id)sender;
-
+-(IBAction)stepper:(id)sender;
 @end
