@@ -18,6 +18,11 @@
     UILabel *auxFirstLabel;
     UILabel *auxSecondLabel;
     UILabel *auxThirdLabel;
+    
+    IBOutlet UIButton *firstButton;
+    IBOutlet UIButton *secondButton;
+    IBOutlet UIButton *thirdButton;
+    IBOutlet UIButton *secViewButton;
 }
 
 -(IBAction)onClick:(id)sender;
