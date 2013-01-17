@@ -1,14 +1,15 @@
 //
-//  secondFlight.m
-//  Smith_Michael_1301_AOC2_Week1
+//  thirdFlight.m
+//  Smith_Michael_1301_AOC2_Week2
 //
-//  Created by Michael Smith on 1/9/13.
+//  Created by Michael Smith on 1/16/13.
 //  Copyright (c) 2013 Michael Smith. All rights reserved.
 //
 
-#import "secondFlight.h"
+#import "thirdFlight.h"
 
-@implementation secondFlight
+@implementation thirdFlight
+
 
 @synthesize flights, timePerFlight, flightTimeMinutes;
 
@@ -18,7 +19,7 @@
     self = [super init];
     if (self != nil)
     {
-        [self setFlights:0];
+        [self setFlights:5];
         [self setTimePerFlight:0];
     }
     return self;
@@ -27,9 +28,10 @@
 //overriding the base flight to refactor for individual flight data
 -(void)calcFlightTime
 {
-    [self setFlights:(flightTimeMinutes / timePerFlight)];
-    //NSLog(@"Gary gets to fly %i times.", self.flights);
+    [self setTimePerFlight:(flightTimeMinutes / flights)];
+    //NSLog(@"Austin gets to fly for %i minutes per flight", self.timePerFlight);
 }
+
 
 
 
