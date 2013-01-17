@@ -145,22 +145,7 @@
         }
         else if (button.tag == 4)
         {
-            if (button.tag == 0)
-            {
-                textBox.text =[NSString stringWithFormat:@"Jack"];
-                //textBox.text = [NSString stringWithFormat:@"Jack can fly %i times for %i minutes each totaling %i minutes.", [jacksFlight flights], [jacksFlight timePerFlight], [jacksFlight flightTimeMinutes]];
-            
-            }
-            else if (button.tag == 1)
-            {
-                textBox.text =[NSString stringWithFormat:@"Gary"];
-                //textBox.text = [NSString stringWithFormat:@"Gary can fly %i times for %i minutes each totaling %i minutes.", [garysFlight flights], [garysFlight timePerFlight], [garysFlight flightTimeMinutes]];
-            }
-            else if (button.tag == 2)
-            {
-                textBox.text =[NSString stringWithFormat:@"Austin"];
-                //textBox.text = [NSString stringWithFormat:@"Austin can fly %i times for %i minutes each totaling %i minutes.", [austinsFlight flights], [austinsFlight timePerFlight], [austinsFlight flightTimeMinutes]];
-            }
+            textBox.text = [NSString stringWithFormat:@"HELP"];
         }
     }
 }
