@@ -28,6 +28,8 @@ typedef enum
 @property NSString *pilotSkill;
 @property int flightTimeMinutes;
 @property NSString *planes;
+@property int flights;
+@property int timePerFlight;
 
 //Initialize
 -(id)init;

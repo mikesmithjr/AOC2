@@ -27,7 +27,7 @@
 //overriding the base flight to refactor for individual flight data
 -(void)calcFlightTime
 {
-    [self setFlights:(flightTimeMinutes / timePerFlight)];
+    [self setFlightTimeMinutes:(flights * timePerFlight)];
     //NSLog(@"Gary gets to fly %i times.", self.flights);
 }
 
