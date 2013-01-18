@@ -36,6 +36,7 @@
     if (stepperControl != nil)
     {
         int stepValue = stepperControl.value;
+        
         textBox.text = [NSString stringWithFormat:@"value is %d", stepValue];
     }
 }
@@ -81,7 +82,7 @@
                 
                 [jacksFlight calcFlightTime];
                 
-                firstLabel.text = [NSString stringWithFormat:@"Jack is an %@ pilot and can fly one of these planes: %@.", [jacksFlight pilotSkill], (planes)];
+                textBox.text = [NSString stringWithFormat:@"Jack is an %@ pilot and can fly one of these planes: %@.", [jacksFlight pilotSkill], (planes)];
                 
             }
         }
@@ -114,7 +115,7 @@
                 
                 [garysFlight calcFlightTime];
                 
-                firstLabel.text = [NSString stringWithFormat:@"Gary is an %@ pilot and can fly one of these planes: %@.", [garysFlight pilotSkill], (planes)];
+                textBox.text = [NSString stringWithFormat:@"Gary is an %@ pilot and can fly one of these planes: %@.", [garysFlight pilotSkill], (planes)];
                 
             }
         }
@@ -147,7 +148,7 @@
                 
                 [austinsFlight calcFlightTime];
                 
-                firstLabel.text = [NSString stringWithFormat:@"Austin is an %@ pilot and can fly one of these planes: %@.", [austinsFlight pilotSkill], (planes)];
+                textBox.text = [NSString stringWithFormat:@"Austin is an %@ pilot and can fly one of these planes: %@.", [austinsFlight pilotSkill], (planes)];
                 
             }
         }
