@@ -30,24 +30,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(IBAction)stepper:(id)sender
-{
-    UIStepper *stepperControl = (UIStepper*)sender;
-    if (stepperControl != nil)
-    {
-        int stepValue = stepperControl.value;
-        
-        textBox.text = [NSString stringWithFormat:@"value is %d", stepValue];
-    }
-}
--(IBAction)onCalcClick:(id)sender
-{
-    UIButton *onCalcButton = (UIButton*)sender;
-    if (onCalcButton != nil)
-    {
-        textBox.text = [NSString stringWithFormat:@"Calc Button Pressed"];
-    }
-}
 -(IBAction)onClick:(id)sender
 {
     UIButton *button = (UIButton*)sender;
@@ -60,31 +42,7 @@
             secondButton.enabled = true;
             thirdButton.enabled = true;
             
-            //creating first flight
-            firstFlight *jacksFlight = (firstFlight*)[FlightFactory setupNewFlight:JACK];
-            [jacksFlight setFlights:5];
-            
-            if (jacksFlight !=nil)
-            {
-                NSArray *jacksPlanes = [[NSArray alloc] initWithObjects:@"Edge 540",@"Super Cub, ", @"Phantom, ", nil];
-                NSMutableString *planes = [[NSMutableString alloc] initWithString:@""];
-                for (int i=0; i<[jacksPlanes count]; i++)
-                {
-                    [planes insertString:([jacksPlanes objectAtIndex:i]) atIndex:0];
-                }
-                [jacksFlight setPlaneList:jacksPlanes];
-                
-                NSString *jacksSkill = @"intermediate level";
-                [jacksFlight setPilotSkill:jacksSkill];
-                
-                //NSLog(@"Jack can fly one of these planes today %@", [jacksFlight planeList]);
-                //NSLog(@"%@", jacksFlight.pilotSkill);
-                
-                [jacksFlight calcFlightTime];
-                
-                textBox.text = [NSString stringWithFormat:@"Jack is an %@ pilot and can fly one of these planes: %@.", [jacksFlight pilotSkill], (planes)];
-                
-            }
+            textBox.text = @"Jack is flying.";            
         }
         else if (button.tag == 1)
         {
@@ -93,31 +51,7 @@
             secondButton.enabled = false;
             thirdButton.enabled = true;
             
-            //creating second flight
-            secondFlight *garysFlight = (secondFlight*)[FlightFactory setupNewFlight:GARY];
-            [garysFlight setFlights:5];
-            
-            if (garysFlight !=nil)
-            {
-                NSArray *garysPlanes = [[NSArray alloc] initWithObjects:@"Extra 300S",@"SpaceWalker, ", @"Habu, ", nil];
-                NSMutableString *planes = [[NSMutableString alloc] initWithString:@""];
-                for (int i=0; i<[garysPlanes count]; i++)
-                {
-                    [planes insertString:([garysPlanes objectAtIndex:i]) atIndex:0];
-                }
-                [garysFlight setPlaneList:garysPlanes];
-                
-                NSString *garysSkill = @"advanced level";
-                [garysFlight setPilotSkill:garysSkill];
-                
-                //NSLog(@"Gary can fly one of these planes today %@", [garysFlight planeList]);
-                //NSLog(@"%@", garysFlight.pilotSkill);
-                
-                [garysFlight calcFlightTime];
-                
-                textBox.text = [NSString stringWithFormat:@"Gary is an %@ pilot and can fly one of these planes: %@.", [garysFlight pilotSkill], (planes)];
-                
-            }
+            textBox.text = @"Gary is flying.";
         }
         else if (button.tag == 2)
         {
@@ -126,31 +60,7 @@
             secondButton.enabled = true;
             thirdButton.enabled = false;
             
-            //creating third flight
-            thirdFlight *austinsFlight = (thirdFlight*)[FlightFactory setupNewFlight:AUSTIN];
-            [austinsFlight setFlights:5];
-            
-            if (austinsFlight !=nil)
-            {
-                NSArray *austinsPlanes = [[NSArray alloc] initWithObjects:@"CarbonZ Yak",@"Mini Stryker, ", @"Scimitar, ", nil];
-                NSMutableString *planes = [[NSMutableString alloc] initWithString:@""];
-                for (int i=0; i<[austinsPlanes count]; i++)
-                {
-                    [planes insertString:([austinsPlanes objectAtIndex:i]) atIndex:0];
-                }
-                [austinsFlight setPlaneList:austinsPlanes];
-                
-                NSString *austinsSkill = @"expert level";
-                [austinsFlight setPilotSkill:austinsSkill];
-                
-                //NSLog(@"Austin can fly one of these planes today %@", [austinsFlight planeList]);
-                //NSLog(@"%@", austinsFlight.pilotSkill);
-                
-                [austinsFlight calcFlightTime];
-                
-                textBox.text = [NSString stringWithFormat:@"Austin is an %@ pilot and can fly one of these planes: %@.", [austinsFlight pilotSkill], (planes)];
-                
-            }
+            textBox.text = @"Austin is Flying.";
         }
         else if (button.tag == 3)
         {
@@ -163,6 +73,68 @@
         
     }
 }
+-(IBAction)stepper:(id)sender
+{
+    UIStepper *stepperControl = (UIStepper*)sender;
+    if (stepperControl != nil)
+    {
+        int stepValue = stepperControl.value;
+        
+        textBox.text = [NSString stringWithFormat:@"%d flying fields selected.", stepValue];
+    }
+}
+-(IBAction)onCalcClick:(id)sender
+{
+    int stepNum = stepper.value;
+    
+        if (firstButton.enabled == false)
+        {
+            
+            //creating first flight
+            firstFlight *jacksFlight = (firstFlight*)[FlightFactory setupNewFlight:JACK];
+            
+            
+            if (jacksFlight !=nil)
+            {
+                [jacksFlight setFlights:5];
+                [jacksFlight calcFlightTime];
+                int totalFlightTime = jacksFlight.flightTimeMinutes * stepNum;
+                textBox.text = [NSString stringWithFormat:@"Jack will go to %d of fields and fly for %d min.",stepNum, totalFlightTime];
+                stepper.value = 0;
+            }
+        }
+        else if (secondButton.enabled == false)
+        {
+            
+            //creating second flight
+            secondFlight *garysFlight = (secondFlight*)[FlightFactory setupNewFlight:GARY];
+            
+            if (garysFlight !=nil)
+            {
+                [garysFlight setFlights:5];
+                [garysFlight calcFlightTime];
+                int totalFlightTime = garysFlight.flightTimeMinutes * stepNum;
+                textBox.text = [NSString stringWithFormat:@"Gary will go to %d of fields and fly for %d min.",stepNum, totalFlightTime];
+                stepper.value = 0;
+            }
+        }
+        else if (thirdButton.enabled == false)
+        {
+            
+            //creating third flight
+            thirdFlight *austinsFlight = (thirdFlight*)[FlightFactory setupNewFlight:AUSTIN];
+            
+            if (austinsFlight !=nil)
+            {
+                [austinsFlight setFlights:5];
+                [austinsFlight calcFlightTime];
+                int totalFlightTime = austinsFlight.flightTimeMinutes * stepNum;
+                textBox.text = [NSString stringWithFormat:@"Austin will go to %d of fields and fly for %d min.",stepNum, totalFlightTime];
+                stepper.value = 0;
+            }
+        }
+}
+
 
 //Segment control to change the background color
 -(IBAction)colorSelect:(id)sender
