@@ -30,7 +30,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(IBAction)stepper:(id)sender
+{
+    UIStepper *stepperControl = (UIStepper*)sender;
+    if (stepperControl != nil)
+    {
+        int stepValue = stepperControl.value;
+        textBox.text = [NSString stringWithFormat:@"value is %d", stepValue];
+    }
+}
+-(IBAction)onCalcClick:(id)sender
+{
+    UIButton *onCalcButton = (UIButton*)sender;
+    if (onCalcButton != nil)
+    {
+        textBox.text = [NSString stringWithFormat:@"Calc Button Pressed"];
+    }
+}
 -(IBAction)onClick:(id)sender
 {
     UIButton *button = (UIButton*)sender;
@@ -78,7 +94,7 @@
             
             //creating second flight
             secondFlight *garysFlight = (secondFlight*)[FlightFactory setupNewFlight:GARY];
-            [garysFlight setFlightTimeMinutes:40];
+            [garysFlight setFlights:5];
             
             if (garysFlight !=nil)
             {
@@ -111,7 +127,7 @@
             
             //creating third flight
             thirdFlight *austinsFlight = (thirdFlight*)[FlightFactory setupNewFlight:AUSTIN];
-            [austinsFlight setFlightTimeMinutes:10];
+            [austinsFlight setFlights:5];
             
             if (austinsFlight !=nil)
             {
@@ -143,13 +159,11 @@
                 [self presentViewController:infoView animated:TRUE completion:nil];
             }
         }
-        else if (button.tag == 4)
-        {
-            textBox.text = [NSString stringWithFormat:@"HELP"];
-        }
+        
     }
 }
 
+//Segment control to change the background color
 -(IBAction)colorSelect:(id)sender
 {
     UISegmentedControl *colorChanger = (UISegmentedControl*)sender;
@@ -171,13 +185,5 @@
     }
 }
 
--(IBAction)stepper:(id)sender
-{
-    UIStepper *stepperControl = (UIStepper*)sender;
-    if (stepperControl != nil)
-    {
-        int stepValue = stepperControl.value;
-        textBox.text = [NSString stringWithFormat:@"value is %d", stepValue];
-    }
-}
+
 @end

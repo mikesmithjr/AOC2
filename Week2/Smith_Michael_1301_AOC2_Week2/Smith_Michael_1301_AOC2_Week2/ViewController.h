@@ -31,4 +31,5 @@
 -(IBAction)onClick:(id)sender;
 -(IBAction)colorSelect:(id)sender;
 -(IBAction)stepper:(id)sender;
+-(IBAction)onCalcClick:(id)sender;
 @end
