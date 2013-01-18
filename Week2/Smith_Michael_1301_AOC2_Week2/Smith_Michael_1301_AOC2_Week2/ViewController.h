@@ -20,8 +20,6 @@
     IBOutlet UIButton *calcButton;
     IBOutlet UIStepper *stepper;
     
-    //setting up labels
-    IBOutlet UILabel *firstLabel;
     
     
     //setting up text box
