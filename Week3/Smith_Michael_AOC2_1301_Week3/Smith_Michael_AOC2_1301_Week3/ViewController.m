@@ -32,8 +32,22 @@
     AddEventViewController *addNewEvent = [[AddEventViewController alloc] initWithNibName:@"AddEventViewController" bundle:nil];
     if(addNewEvent !=nil)
     {
+        addNewEvent.delegate = self;
         [self presentViewController:addNewEvent animated:TRUE completion:nil];
     }
+}
+
+-(void)DidSave:(NSString*)eventTitle
+{
+    if ([eventList.text isEqualToString:@"Event List"])
+    {
+        eventList.text = eventTitle;
+    }
+    else
+    {
+        eventList.text = [eventList.text stringByAppendingString:eventTitle];
+    }
+    
 }
 
 @end

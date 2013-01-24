@@ -10,7 +10,7 @@
 
 @protocol SaveEventDelegate <NSObject>
 
--(void)DidClose:(NSString*)eventTitle;
+-(void)DidSave:(NSString*)eventTitle;
 @end
 
 @interface AddEventViewController : UIViewController <UITextFieldDelegate>
@@ -20,10 +20,11 @@
     IBOutlet UIButton *saveButton;
     IBOutlet UIButton *closeKeyboard;
     IBOutlet UITextField *eventText;
+    IBOutlet UIDatePicker *eventDate;
 }
 -(IBAction)onSave:(id)sender;
 -(IBAction)onKeyClose:(id)sender;
--(IBAction)onDateChange:(id)sender;
+
 
 @property (strong) id<SaveEventDelegate> delegate;
 @end
