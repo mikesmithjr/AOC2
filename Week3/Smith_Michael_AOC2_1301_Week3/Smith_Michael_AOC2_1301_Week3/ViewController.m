@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AddEventViewController.h"
 
 @interface ViewController ()
 
@@ -24,6 +25,15 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)onAdd:(id)sender
+{
+    AddEventViewController *infoView = [[AddEventViewController alloc] initWithNibName:@"AddEventViewController" bundle:nil];
+    if(infoView !=nil)
+    {
+        [self presentViewController:infoView animated:TRUE completion:nil];
+    }
 }
 
 @end

@@ -10,4 +10,10 @@
 
 @interface ViewController : UIViewController
 
+{
+    IBOutlet UIButton *addEvent;
+    IBOutlet UITextView *eventList;
+}
+
+-(IBAction)onAdd:(id)sender;
 @end
