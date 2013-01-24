@@ -29,10 +29,10 @@
 
 -(IBAction)onAdd:(id)sender
 {
-    AddEventViewController *infoView = [[AddEventViewController alloc] initWithNibName:@"AddEventViewController" bundle:nil];
-    if(infoView !=nil)
+    AddEventViewController *addNewEvent = [[AddEventViewController alloc] initWithNibName:@"AddEventViewController" bundle:nil];
+    if(addNewEvent !=nil)
     {
-        [self presentViewController:infoView animated:TRUE completion:nil];
+        [self presentViewController:addNewEvent animated:TRUE completion:nil];
     }
 }
 

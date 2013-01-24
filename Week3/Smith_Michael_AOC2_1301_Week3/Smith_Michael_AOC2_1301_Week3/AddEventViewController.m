@@ -14,6 +14,8 @@
 
 @implementation AddEventViewController
 
+@synthesize delegate;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -29,10 +31,37 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)eventText
+{
+    return true;
+}
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+
+-(IBAction)onSave:(id)sender
+{
+    
+}
+
+-(IBAction)onKeyClose:(id)sender
+{
+    [eventText resignFirstResponder];
+}
+
+-(IBAction)onDateChange:(id)sender
+{
+    UIDatePicker *datePicker = (UIDatePicker*)sender;
+    if (datePicker != nil)
+    {
+        NSDate *eventDate = datePicker.date;
+    }
+}
 @end
