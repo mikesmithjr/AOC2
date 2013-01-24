@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "AddEventViewController.h"
 
+@protocol SaveEventDelegate <NSObject>
+
+@required
+-(void)DidSave:(NSString*)eventTitle;
+@end
+
 @interface ViewController : UIViewController <SaveEventDelegate>
 
 {

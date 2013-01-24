@@ -48,7 +48,17 @@
 
 -(IBAction)onSave:(id)sender
 {
-    
+    if (delegate != nil)
+    {
+        NSString *text = eventText.text;
+        NSDate *date = eventDate.date;
+        NSDateFormatter *format = [[NSDateFormatter alloc] init];
+        [format setDateFormat:@"MMMM d, YYY 'at' hh:mm a"];
+        NSString *formatDate = [format stringFromDate:date];
+        NSString *event = [NSString stringWithFormat:@"Event: %@ \n On: %@ \n\n", text, formatDate];
+        [delegate DidSave:event];
+    }
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 -(IBAction)onKeyClose:(id)sender
@@ -56,12 +66,4 @@
     [eventText resignFirstResponder];
 }
 
--(IBAction)onDateChange:(id)sender
-{
-    UIDatePicker *datePicker = (UIDatePicker*)sender;
-    if (datePicker != nil)
-    {
-        NSDate *eventDate = datePicker.date;
-    }
-}
 @end
