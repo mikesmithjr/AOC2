@@ -28,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //Sets minimum date to today
+    [eventDate setMinimumDate:[NSDate date]];
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)eventText
@@ -45,22 +46,26 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+//When clicking the save event button this is triggered
 -(IBAction)onSave:(id)sender
 {
     if (delegate != nil)
     {
+        //Set Variables for event text and date
         NSString *text = eventText.text;
         NSDate *date = eventDate.date;
+        //Format date
         NSDateFormatter *format = [[NSDateFormatter alloc] init];
         [format setDateFormat:@"MMMM d, YYY 'at' hh:mm a"];
+        //create string to save to Event List text view
         NSString *formatDate = [format stringFromDate:date];
         NSString *event = [NSString stringWithFormat:@"Event: %@ \n On: %@ \n\n", text, formatDate];
         [delegate DidSave:event];
     }
+    //Dismiss AddEventView
     [self dismissViewControllerAnimated:true completion:nil];
 }
-
+//Close Keyboard
 -(IBAction)onKeyClose:(id)sender
 {
     [eventText resignFirstResponder];
