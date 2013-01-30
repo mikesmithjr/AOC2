@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AddEventViewController.h"
 
-@interface ViewController : UIViewController
+@protocol SaveEventDelegate <NSObject>
 
+@required
+-(void)DidSave:(NSString*)eventTitle;
+@end
+
+@interface ViewController : UIViewController <SaveEventDelegate>
+
+{
+    IBOutlet UIButton *addEvent;
+    IBOutlet UITextView *eventList;
+}
+
+-(IBAction)onAdd:(id)sender;
 @end
