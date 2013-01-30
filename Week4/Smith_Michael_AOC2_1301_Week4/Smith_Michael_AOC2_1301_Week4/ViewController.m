@@ -19,6 +19,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults != nil)
+    {
+        NSString *events = [defaults objectForKey:@"eventList"];
+        eventList.text = events;
+    }
 }
 
 //Right swipe add event
@@ -35,7 +41,13 @@
 //Save the ListView to user defaults
 -(IBAction)onSaveDefault:(id)sender
 {
-    int temp = 3;
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if (defaults != nil)
+    {
+        NSString *events = eventList.text;
+        [defaults setObject:events forKey:@"eventList"];
+        [defaults synchronize];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,6 +65,10 @@
     [super viewWillAppear: true];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    
+}
 
 //Save event processed from custom delgate
 -(void)DidSave:(NSString*)eventTitle
