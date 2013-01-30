@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddEventViewController : UIViewController
+@protocol SaveEventDelegate <NSObject>
 
+-(void)DidSave:(NSString*)eventTitle;
+@end
+
+@interface AddEventViewController : UIViewController <UITextFieldDelegate>
+{
+    id<SaveEventDelegate> delegate;
+    
+    IBOutlet UIButton *saveButton;
+    IBOutlet UIButton *closeKeyboard;
+    IBOutlet UITextField *eventText;
+    IBOutlet UIDatePicker *eventDate;
+}
+-(IBAction)onSave:(id)sender;
+-(IBAction)onKeyClose:(id)sender;
+
+
+@property (strong) id<SaveEventDelegate> delegate;
 @end
