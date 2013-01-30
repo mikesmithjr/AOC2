@@ -18,9 +18,14 @@
 @interface ViewController : UIViewController <SaveEventDelegate>
 
 {
-    IBOutlet UIButton *addEvent;
+    
     IBOutlet UITextView *eventList;
+    IBOutlet UILabel *rightToAdd;
+    IBOutlet UIButton *saveDefault;
+    
+    UISwipeGestureRecognizer *rightSwipe;
 }
 
--(IBAction)onAdd:(id)sender;
+
+-(IBAction)onSaveDefault:(id)sender;
 @end
