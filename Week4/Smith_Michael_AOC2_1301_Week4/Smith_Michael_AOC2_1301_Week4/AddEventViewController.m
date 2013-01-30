@@ -32,22 +32,8 @@
     [eventDate setMinimumDate:[NSDate date]];
 }
 
-- (BOOL)textFieldShouldBeginEditing:(UITextField *)eventText
-{
-    return true;
-}
--(void)viewWillAppear:(BOOL)animated
-{
-    
-}
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-//When clicking the save event button this is triggered
--(IBAction)onSave:(id)sender
+//Triggered when swipe left to save label is triggered
+-(void)onLeftSwipe
 {
     if (delegate != nil)
     {
@@ -65,6 +51,26 @@
     //Dismiss AddEventView
     [self dismissViewControllerAnimated:true completion:nil];
 }
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)eventText
+{
+    return true;
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    //add swipe recognizer for right swipe on first view
+    leftSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onLeftSwipe)];
+    leftSwipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [leftToClose addGestureRecognizer:leftSwipe];
+    [super viewWillAppear: true];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 //Close Keyboard
 -(IBAction)onKeyClose:(id)sender
 {

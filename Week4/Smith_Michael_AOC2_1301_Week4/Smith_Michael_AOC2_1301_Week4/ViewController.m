@@ -21,22 +21,39 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
+//Right swipe add event
+-(void)onRightSwipe
+{
+        //Launch Add Event View
+        AddEventViewController *addNewEvent = [[AddEventViewController alloc] initWithNibName:@"AddEventViewController" bundle:nil];
+        if(addNewEvent !=nil)
+        {
+            addNewEvent.delegate = self;
+            [self presentViewController:addNewEvent animated:TRUE completion:nil];
+        }
+}
+//Save the ListView to user defaults
+-(IBAction)onSaveDefault:(id)sender
+{
+    int temp = 3;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-//Add Event button click event
--(IBAction)onAdd:(id)sender
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    //Launch Add Event View
-    AddEventViewController *addNewEvent = [[AddEventViewController alloc] initWithNibName:@"AddEventViewController" bundle:nil];
-    if(addNewEvent !=nil)
-    {
-        addNewEvent.delegate = self;
-        [self presentViewController:addNewEvent animated:TRUE completion:nil];
-    }
+    //add swipe recognizer for right swipe on first view
+    rightSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(onRightSwipe)];
+    rightSwipe.direction = UISwipeGestureRecognizerDirectionRight;
+    [rightToAdd addGestureRecognizer:rightSwipe];
+    [super viewWillAppear: true];
 }
+
+
 //Save event processed from custom delgate
 -(void)DidSave:(NSString*)eventTitle
 {

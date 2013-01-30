@@ -17,12 +17,15 @@
 {
     id<SaveEventDelegate> delegate;
     
-    IBOutlet UIButton *saveButton;
+    
     IBOutlet UIButton *closeKeyboard;
     IBOutlet UITextField *eventText;
     IBOutlet UIDatePicker *eventDate;
+    IBOutlet UILabel *leftToClose;
+    
+    UISwipeGestureRecognizer *leftSwipe;
 }
--(IBAction)onSave:(id)sender;
+
 -(IBAction)onKeyClose:(id)sender;
 
 
