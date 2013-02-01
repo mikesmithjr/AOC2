@@ -35,21 +35,30 @@
 //Triggered when swipe left to save label is triggered
 -(void)onLeftSwipe
 {
-    if (delegate != nil)
+    if ([eventText.text isEqualToString:@""])
     {
-        //Set Variables for event text and date
-        NSString *text = eventText.text;
-        NSDate *date = eventDate.date;
-        //Format date
-        NSDateFormatter *format = [[NSDateFormatter alloc] init];
-        [format setDateFormat:@"MMMM d, YYY 'at' hh:mm a"];
-        //create string to save to Event List text view
-        NSString *formatDate = [format stringFromDate:date];
-        NSString *event = [NSString stringWithFormat:@"Event: %@ \n On: %@ \n\n", text, formatDate];
-        [delegate DidSave:event];
+        //Dismiss View
+        [self dismissViewControllerAnimated:true completion:nil];
+    }else
+    {
+        //save event data
+        if (delegate != nil)
+        {
+            //Set Variables for event text and date
+            NSString *text = eventText.text;
+            NSDate *date = eventDate.date;
+            //Format date
+            NSDateFormatter *format = [[NSDateFormatter alloc] init];
+            [format setDateFormat:@"MMMM d, YYY 'at' hh:mm a"];
+            //create string to save to Event List text view
+            NSString *formatDate = [format stringFromDate:date];
+            NSString *event = [NSString stringWithFormat:@"Event: %@ \n On: %@ \n\n", text, formatDate];
+            [delegate DidSave:event];
+        }
+        //Dismiss View
+        [self dismissViewControllerAnimated:true completion:nil];
     }
-    //Dismiss AddEventView
-    [self dismissViewControllerAnimated:true completion:nil];
+    
 }
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)eventText
